@@ -1,0 +1,27 @@
+
+<!-- <div class="container-fluid"> -->
+   <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+    <a class="navbar-brand" routerLink="/blog">UCM BLOG</a>
+  
+    <div class="navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li> -->
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-warning mr-sm-2" type="submit" routerLink="/dashboard">Write Post&nbsp;<span><i class="fa fa-pencil" aria-hidden="true"></i></span></button>
+        <div *ngIf="auth.afAuth.authState | async as user; else showLogin">
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="auth.logout()" type="submit">Logout&nbsp;<span><i class="fa fa-sign-out" aria-hidden="true"></i></span></button>
+          </div>
+          &nbsp;&nbsp;
+          <ng-template #showLogin>
+              <button class="btn btn-outline-success my-2 my-sm-0" (click)="auth.login()" type="submit">Login With Google&nbsp;<span><i class="fa fa-google" aria-hidden="true"></i></span></button>
+          </ng-template>
+      </form>
+    </div>
+  </nav>
+<!-- </div> -->

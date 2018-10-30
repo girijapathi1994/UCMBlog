@@ -1,0 +1,42 @@
+<ng-container *ngIf="post">
+  <div [hidden]="!editing">
+    <div class="card col-sm-8 offset-sm-2">
+      <div class="card-body">
+        <h1>Edit Post</h1>
+        <form>
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" placeholder="Post title" [(ngModel)]="post.title" name="title">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Content:</label>
+            <textarea class="form-control" [(ngModel)]="post.content" name="content" rows="10"></textarea>
+          </div>
+          <div class="text-right">
+            <button type="submit" class="btn btn-primary" (click)="updatePost()">Save&nbsp;<span><i class="fa fa-plus" aria-hidden="true"></i></span></button>
+            &nbsp;&nbsp;
+            <button type="submit" class="btn btn-warning" (click)="editing=false" *ngIf="editing">Cancel&nbsp;<span><i class="fa fa-times" aria-hidden="true"></i></span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div [hidden]="editing">
+    <div class="card col-sm-8 offset-sm-2">
+      <img src="{{post.image}}" alt="{{post.title}}" style="height:350px">
+      <div class="card-body">
+        <h4 class="card-title text-danger">{{post.title}}</h4>
+        <p>
+          <small>Posted by <b>{{post.author}}</b> on <b>{{post.published.seconds * 1000 | date:'medium'}}</b></small>
+        </p>
+        <p class="card-text">{{ post.content }}</p>
+        <div class="text-right" *ngIf="auth.currentUserId === post.authorId">
+          <button (click)="editing=true" class="btn btn-info">Edit&nbsp;<span><i class="fa fa-pencil-square" aria-hidden="true"></i></span></button>&nbsp;&nbsp;
+          <button (click)="delete(post.id)" class="btn btn-danger">Delete&nbsp;<span><i class="fa fa-trash-o" aria-hidden="true"></i></span></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ng-container>
