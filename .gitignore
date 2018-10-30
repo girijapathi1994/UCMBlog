@@ -59,3 +59,5 @@ typings/
 
 # next.js build output
 .next
+src/environments/environment.ts
+src/environments/environment.prod.ts
