@@ -1,1 +1,1 @@
-# UCMBlog where we can post our own blogs
+# UCMBlog where we can post our own blogs dev
