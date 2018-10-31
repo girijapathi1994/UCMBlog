@@ -1,1 +1,1 @@
-# UCMBlog where we can post our own blogs dev waste
+# UCMBlog where we can post our own blogs dev waste bit bucket
