@@ -6,18 +6,18 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'ucmblog';
+  title = 'ucmblog new';
   visible = true;
-  
-  constructor(private spinner:NgxSpinnerService){
+
+  constructor(private spinner: NgxSpinnerService) {
 
   }
-  
+
   ngOnInit(): void {
     this.spinner.show();
     setTimeout(() => {
       this.spinner.hide();
     }, 5000);
-    
+
   }
 }
